@@ -1,0 +1,61 @@
+{% extends "network/layout.html" %}
+{% block head %}
+
+{% endblock %}
+{% block body %}
+
+{% if user.is_authenticated %}
+  <form id="post-form" onsubmit="create_post();return false;">
+    {% csrf_token %}
+    <div class="form-group" >
+      <label>Create a Post</label>
+      <textarea class="form-control" id="post-text" rows="3"></textarea>
+    </div>
+    <input id="post-button" name="post" type="submit" class="btn btn-primary" value="Post">
+  </form>
+  {% endif %}
+<br>
+<div id= "profile-page" class="jumbotron">
+
+</div>
+
+
+<div id='all-posts'> 
+
+</div>
+<div id='currently-following-posts'> 
+
+</div>
+
+<div class="row justify-content-center">
+  <nav aria-label="Page navigation example">
+      <ul class="pagination" id="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        
+               
+        
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+  </nav>
+</div>
+
+<div id='show-post'>
+  <div id='individual-post'>
+
+  </div>
+  <form id="comment-form" >
+    {% csrf_token %}
+    <div class="form-group" >
+      <label for="">Comment on Post</label>
+      <textarea class="form-control" id="comment-text" rows="2"></textarea>
+    </div>
+    <input id="comment-button" name="comment-button" type="submit" class="btn btn-primary" value="Comment">
+  </form> 
+  <div class="flex-column align-items-start">
+      <h3>Comments:</h3>
+      <div id="comment-section">
+
+      </div>
+  </div>
+</div>
+{% endblock %}

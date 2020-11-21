@@ -1,0 +1,20 @@
+#like-button{
+    width:300% !important;
+    min-width: 75px;
+}
+
+#post-form{
+    padding-bottom: 3%;
+}
+#currently-following-posts{
+    display: 'none';
+}
+#profile-page{
+    display:none;
+}
+
+.content{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
